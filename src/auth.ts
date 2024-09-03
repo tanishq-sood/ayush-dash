@@ -6,7 +6,7 @@ import authConfig from "./auth.config";
 export const BASE_PATH = "/api/auth";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  adapter: MongoDBAdapter(client, { databaseName: "users" }),
+  adapter: MongoDBAdapter(client, { databaseName: "ayush" }),
   jwt: {
     maxAge: 30 * 24 * 60 * 60,
   },
@@ -28,7 +28,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     authorized({ request, auth }) {
       try {
         const { pathname } = request.nextUrl;
-        const unprotectedRoutes = ["/", "/onboarding", "/api/auth/signin"];
+        const unprotectedRoutes = ["/", "/login", "/api/auth/signin"];
 
         if (unprotectedRoutes.includes(pathname)) {
           return true;

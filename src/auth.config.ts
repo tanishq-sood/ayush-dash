@@ -1,5 +1,4 @@
 import GoogleProvider from "next-auth/providers/google"
-import CreddentialProvider from "next-auth/providers/credentials"
 import type { NextAuthConfig } from "next-auth"
 
 export const BASE_PATH = "/api/auth";

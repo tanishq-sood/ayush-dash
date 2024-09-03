@@ -4,6 +4,7 @@ import React from 'react';
 import { PiPasswordFill } from "react-icons/pi";
 import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
+import { signIn as cSignIn } from "@/auth"
 import { signIn } from '@/lib/LoginHelper';
 
 const AyushSignup = () => {
@@ -44,7 +45,6 @@ const AyushSignup = () => {
         <p className="mb-2 text-xl text-[#555]">India is the largest producer of medicinal plants and holds a 6,000-year-old tradition of Ayurvedic practices.</p>
       </div>
     </section>
-
   );
 };
 

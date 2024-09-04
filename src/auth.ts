@@ -1,10 +1,11 @@
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import NextAuth, { User } from "next-auth";
 import client from "@/lib/db";
-import authConfig from "./auth.config";
+import authConfig from "@/auth.config";
 import Credentials from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google"
-import { checkUserCredentials } from "./lib/utils/DB_Actions";
+import { checkUserCredentials } from "@/lib/utils/DB_Actions";
+import { compileWelcomeTemplate, sendMail } from "./lib/mail";
 
 export const BASE_PATH = "/api/auth";
 
@@ -69,6 +70,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               { returnDocument: 'after', upsert: true } // Return the updated document after upserting
             );
 
+            if (token.email) {
+              sendMail({
+                to: token.email,
+                subject: "Welcome to the app",
+                body: compileWelcomeTemplate("Akshat"),
+                name: token?.name || session.user.name ||"User",
+              });
+            }
+
             session.user.username = newUser.username;
           }
         } catch (error) {
@@ -100,7 +110,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       async authorize(credentials): Promise<User | null> {
 
         const user = checkUserCredentials(credentials.email as string, credentials.password as string);
-        
+
         if (user) {
           return user;
         }

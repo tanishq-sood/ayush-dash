@@ -1,0 +1,58 @@
+.sector-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 15px; /* Spacing between images */
+    width: 100%;
+}
+
+.photo-container {
+    margin-bottom: 15px; /* Space between the image and the next row */
+    text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transition for hover effects */
+}
+
+.sector-photos img {
+    width: 40%; /* Image size */
+    border-radius: 10px;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    object-fit: cover; /* Cover the image area without distortion */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.desc {
+    width: 70%; /* Match the width of the text to the image width */
+    font-size: 12px;
+    margin-top: 8px;
+    color: black;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto; /* Center the text below the image */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.sectors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Reduced padding */
+}
+
+.btn {
+    margin-top: 15px;
+}
+
+.desc p {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover effect: image and text */
+.photo-container:hover img {
+    transform: scale(1.05); /* Slightly enlarge the image */
+    filter: brightness(0.8); /* Dim the image slightly */
+    cursor: pointer;
+}
+
+.photo-container:hover .desc {
+    color: #3a9b43; /* Change text color on hover */
+}

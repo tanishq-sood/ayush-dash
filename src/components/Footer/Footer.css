@@ -1,0 +1,63 @@
+.footer {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    border-top: 1px solid #3a9b43; /* Horizontal line color */
+    padding: 15px 20px; /* Added horizontal padding for a better look */
+    background-color: rgba(73, 101, 78, 1); /* Set the background color for the footer */
+    color: #ffffff; /* Set the text color to white */
+    border-radius: 10px; /* Add rounded corners to the footer */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 1.5); /* Add a subtle shadow for depth */
+    width: 95%; /* Slightly reduce the width to accommodate the shadow */
+}
+
+.footer p {
+    margin-bottom: 10px;
+    color: #ffffff; /* Ensure the text is visible on the background */
+}
+
+.footer ul {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.footer ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+    color: #ffffff; /* Ensure the text is visible on the background */
+}
+
+#contact-us {
+    margin-top: 20px;
+    width: 100%; /* Ensure it spans the full width */
+    text-align: center;
+    color: #ffffff; /* Ensure the text is visible on the background */
+}
+
+.social-links {
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center the links horizontally */
+    gap: 20px; /* Add space between each social link */
+}
+
+.social-links a {
+    display: flex; /* Align image and text in a single line */
+    align-items: center; /* Vertically center-align the content */
+    text-decoration: none;
+    color: #ffffff; /* Set the link text color to white */
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffcc00; /* Change the hover color to a contrasting one */
+}
+
+.social-links img {
+    width: 25px;      /* Set width to 25px */
+    height: 25px;     /* Set height to 25px to make all images square */
+    margin-right: 10px;
+    object-fit: cover; /* Ensure the image fits within the dimensions without distortion */
+}

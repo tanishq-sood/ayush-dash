@@ -7,7 +7,14 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
 
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -17,13 +24,8 @@
 }
 
 body {
+  background-color: rgba(236,237,232,255) ;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -31,3 +33,42 @@ body {
     text-wrap: balance;
   }
 }
+
+a{
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+.container{
+  padding-left: 5%;
+  padding-right: 5%;
+
+}
+.btn{
+  background-color: rgba(37,53,40,255)  ;
+  color: white;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: inline flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.btn img{
+  width: 20px;
+  margin-left:10px ;
+}
+.btn.dark-btn{
+  background-color: rgba(73,101,78,255);
+  color: rgba(228,230,217,255);
+}
+.lang .btn{
+  position: top fixed;
+}
+

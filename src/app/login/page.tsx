@@ -4,8 +4,7 @@ import React from 'react';
 import { PiPasswordFill } from "react-icons/pi";
 import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
-import { signIn as cSignIn } from "@/auth"
-import { signIn } from '@/lib/LoginHelper';
+import { signIn, signInWithCredentials } from '@/lib/LoginHelper';
 
 const AyushSignup = () => {
 
@@ -14,7 +13,9 @@ const AyushSignup = () => {
       <div className="bg-[#f0f9e9] p-5 rounded-lg w-full md:w-1/2 mb-5 md:mb-0 flex flex-col items-center justify-center min-h-[500px]">
         <h2 className="text-green-600 mb-5 text-center text-2xl">Join AYUSH-AARAMBH</h2>
         <p className="mb-5 text-center text-lg">Sign up or sign in to explore more opportunities with the AYUSH Startup community.</p>
-        <form className="w-full flex flex-col items-center">
+        <form className="w-full flex flex-col items-center" action={async (formData) => {
+          await signInWithCredentials(formData)
+        }}>
           <div className="mb-4 w-full">
             <label className="input input-bordered flex items-center gap-2 bg-white w-full">
               <MdEmail size={35} />
@@ -31,8 +32,10 @@ const AyushSignup = () => {
             <button type="submit" className="bg-green-600 text-white py-2 px-5 rounded-md mx-2 transition-transform duration-300 hover:bg-green-500 hover:shadow-md">Sign Up</button>
             <button type="button" className="bg-green-600 text-white py-2 px-5 rounded-md mx-2 transition-transform duration-300 hover:bg-green-500 hover:shadow-md">Sign In</button>
           </div>
+        </form>
+        <form action={signIn}>
           <div className="flex justify-center mt-5 w-full">
-            <button onClick={signIn} type="button" className="bg-green-600 text-white py-2 px-5 rounded-md mx-2 transition-transform duration-300 hover:bg-green-500 hover:shadow-md flex items-center gap-2">
+            <button type="submit" className="bg-green-600 text-white py-2 px-5 rounded-md mx-2 transition-transform duration-300 hover:bg-green-500 hover:shadow-md flex items-center gap-2">
               <FcGoogle size={25} /> Continue with Google
             </button>
           </div>

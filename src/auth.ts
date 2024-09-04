@@ -1,7 +1,8 @@
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import NextAuth from "next-auth";
+import NextAuth, { User } from "next-auth";
 import client from "@/lib/db";
 import authConfig from "./auth.config";
+import Credentials from "next-auth/providers/credentials";
 
 export const BASE_PATH = "/api/auth";
 

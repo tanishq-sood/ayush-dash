@@ -10,21 +10,5 @@ export default {
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
-    Credentials({
-      name: "Credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
-      authorize: async(credentials): Promise<User | null> => {
-        let user = null
-
-        if (!user) {
-          return null;
-        }
-
-        return user;
-      }
-    })
   ],
 } satisfies NextAuthConfig

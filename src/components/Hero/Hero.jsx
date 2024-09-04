@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="hero-text">
         <h1>AYUSH-AARAMBH: A STARTUP INITIATIVE</h1>
         <p>Register Now and take your first step towards making a Healthier Bharat</p>
-        <button className='btn'>REGISTER NOW </button>
+        <button className='btns'>REGISTER NOW </button>
       </div>
     </div>
   )

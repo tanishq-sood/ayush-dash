@@ -3,6 +3,8 @@ import NextAuth, { User } from "next-auth";
 import client from "@/lib/db";
 import authConfig from "./auth.config";
 import Credentials from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google"
+import { checkUserCredentials } from "./lib/utils/DB_Actions";
 
 export const BASE_PATH = "/api/auth";
 
@@ -84,6 +86,29 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   secret: process.env.AUTH_SECRET,
   ...authConfig,
+  providers: [
+    GoogleProvider({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
+    }),
+    Credentials({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "email", required: true, name: "email" },
+        password: { label: "Password", type: "password", required: true, name: "password" },
+      },
+      async authorize(credentials): Promise<User | null> {
+
+        const user = checkUserCredentials(credentials.email as string, credentials.password as string);
+        
+        if (user) {
+          return user;
+        }
+
+        return null;
+      },
+    }),
+  ]
 });
 
 declare module "next-auth" {

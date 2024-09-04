@@ -1,15 +1,16 @@
-/* eslint-disable react/prop-types */
- 
-/* eslint-disable no-unused-vars */
 import React from 'react'
 import './About.css'
+import Image from 'next/image'
+
+import about1 from '../../../public/assets/about1.jpg'
+import playicon1 from '../../../public/assets/playicon1.png'  
 
 const About = ({setPlayState}) => {
   return (
     <div className='about'id='about'>
         <div className='about-left'>
-            <img src={'/assets/about1.jpg'} alt="" className='about1'/>
-            <img src={'/assets/playicon1.png'} alt="" className='playicon' onClick={()=>{setPlayState(true)}}/>
+            <Image src={about1} alt="" className='about1'/>
+            <Image src={playicon1} alt="" className='playicon' onClick={()=>{setPlayState(true)}}/> 
         </div>
         <div className='about-right'>
             <h3>ABOUT</h3>

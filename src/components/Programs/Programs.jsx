@@ -2,30 +2,31 @@
 import { GiMagnifyingGlass } from "react-icons/gi";
 import React from 'react'
 import './Programs.css'
-import program1 from'../../assets/viewdashboard.jpg'
-import program2 from'../../assets/exploreforms.jpg'
-import program3 from'../../assets/uploadfile.jpg'
-// import planticon from '../../assets/playicon1.png'
+import Image from 'next/image'
+
+import viewdashboard from '../../../public/assets/viewdashboard.jpg'
+import exploreforms from '../../../public/assets/exploreforms.jpg'
+import uploadfile from '../../../public/assets/uploadfile.jpg'
 
 const Programs = () => {
   return (
     <div className='programs' id='program'>
       <div className='program'>
-        <img src={'/assets/viewdashboard.jpg'} alt="" />
+        <Image src={viewdashboard} alt="" />
         <div className='icon'>
             <GiMagnifyingGlass size={70}  />
             <p>VIEW DASHBOARD</p>
         </div>
       </div>
       <div className='program'>
-        <img src={'/assets/exploreforms.jpg'} alt="" />
+        <Image src={exploreforms} alt="" />
         <div className='icon'>
             <GiMagnifyingGlass  size={70} />
             <p>EXPLORE FORMS</p>
         </div>
       </div>
       <div className='program'>
-        <img src={'/assets/uploadfile.jpg'} alt="" />
+        <Image src={uploadfile} alt="" />
         <div className='icon'>
             <GiMagnifyingGlass  size={70} />
             <p>UPLOAD FILES </p>

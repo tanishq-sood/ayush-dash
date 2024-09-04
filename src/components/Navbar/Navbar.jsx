@@ -1,5 +1,6 @@
-import { IoSettingsOutline } from "react-icons/io5";
 import React, { useEffect, useState } from 'react'
+import Logo from '../../../public/assets/logo2.png'
+import Image from 'next/image'
 import'./Navbar.css'
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
 
   return (
    <nav className={`container ${sticky ? 'dark-nav':''} navbar`}>
-    <img src="/assets/logo.jpeg" alt="" className='logo navbar-start'/>
+    <Image src={Logo} alt="" className='logo navbar-start'/>
     <ul className="navbar-end">
         <li><a className="btns" href='#hero'>Home</a></li>
         <li><a className="btns" href='#program'>Program</a></li>

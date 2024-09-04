@@ -1,15 +1,9 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
 import React, { useRef } from 'react';
 import './faq.css';
-import next from '../../assets/nexticon2.png';
-import back from '../../assets/backicon2.png';
-import faq1 from '../../assets/faqqq.png';
-import faq2 from '../../assets/faqqq.png';
-import faq3 from '../../assets/faqqq.png';
-import faq4 from '../../assets/faqqq.png';
-import faq5 from '../../assets/faqqq.png';
-import faq6 from '../../assets/faqqq.png';
+import Image from 'next/image';
+
+import next_btn from '../../../public/assets/nexticon2.png';
+import back_btn from '../../../public/assets/backicon2.png';
 
 const FAQ = () => {
     const slider = useRef();
@@ -31,8 +25,8 @@ const FAQ = () => {
 
     return (
         <div className='faq' id='faq'>
-            <img src={'/assets/nexticon2.png'} alt="Next" className='nexxt-btn' onClick={slideForward} />
-            <img src={'/assets/backicon2.png'} alt="Back" className='back-btn' onClick={slideBackward} />
+            <Image src={next_btn} alt="Next" className='nexxt-btn' onClick={slideForward} />
+            <Image src={back_btn} alt="Back" className='back-btn' onClick={slideBackward} />
 
             <div className='slider'>
                 <ul ref={slider}>
@@ -57,7 +51,7 @@ const FAQ = () => {
                             </h3>
                             <span>Delhi, INDIA</span>
                             <div className='text'>
-                                <p>The application form requires you to provide detailed information about your startup, including the business name, founders' details, business objectives, and the specific AYUSH domain you operate in.</p>
+                                <p>{"The application form requires you to provide detailed information about your startup, including the business name, founders' details, business objectives, and the specific AYUSH domain you operate in."}</p>
                             </div>
                         </div>
                     </li>

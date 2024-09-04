@@ -10,5 +10,12 @@ export default {
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
+    Credentials({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Username", type: "text", required: true },
+        password: { label: "Password", type: "password", required: true },
+      },
+    }),
   ],
 } satisfies NextAuthConfig

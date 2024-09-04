@@ -6,6 +6,7 @@ export async function checkUserCredentials(email: string, password: string): Pro
     const collection = db.collection("users");
 
     const user = await collection.findOne({ email });
+
     if (!user) return null;
 
     return user as User;

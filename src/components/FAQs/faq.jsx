@@ -31,8 +31,9 @@ const FAQ = () => {
 
     return (
         <div className='faq' id='faq'>
-            <img src={next} alt="Next" className='nexxt-btn' onClick={slideForward} />
-            <img src={back} alt="Back" className='back-btn' onClick={slideBackward} />
+            <img src={'/assets/nexticon2.png'} alt="Next" className='nexxt-btn' onClick={slideForward} />
+            <img src={'/assets/backicon2.png'} alt="Back" className='back-btn' onClick={slideBackward} />
+
             <div className='slider'>
                 <ul ref={slider}>
                     <li>
@@ -115,5 +116,4 @@ const FAQ = () => {
     );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default FAQ;

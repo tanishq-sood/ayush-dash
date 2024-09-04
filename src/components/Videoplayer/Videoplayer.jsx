@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
 import React, { useRef, useEffect } from 'react';
 import './Videoplayer.css';
 
@@ -8,14 +6,12 @@ const Videoplayer = ({ playState, setPlayState }) => {
   const ytPlayer = useRef(null);
 
   useEffect(() => {
-    // Load the IFrame Player API code asynchronously only once
     if (!window.YT) {
       const tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      // Create a new YouTube player instance when the API is ready
       window.onYouTubeIframeAPIReady = () => {
         ytPlayer.current = new window.YT.Player('ytplayer', {
           height: '315',

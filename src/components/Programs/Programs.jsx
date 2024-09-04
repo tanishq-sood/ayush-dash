@@ -11,21 +11,21 @@ const Programs = () => {
   return (
     <div className='programs' id='program'>
       <div className='program'>
-        <img src={program1} alt="" />
+        <img src={'/assets/viewdashboard.jpg'} alt="" />
         <div className='icon'>
             <GiMagnifyingGlass size={70}  />
             <p>VIEW DASHBOARD</p>
         </div>
       </div>
       <div className='program'>
-        <img src={program2} alt="" />
+        <img src={'/assets/exploreforms.jpg'} alt="" />
         <div className='icon'>
             <GiMagnifyingGlass  size={70} />
             <p>EXPLORE FORMS</p>
         </div>
       </div>
       <div className='program'>
-        <img src={program3} alt="" />
+        <img src={'/assets/uploadfile.jpg'} alt="" />
         <div className='icon'>
             <GiMagnifyingGlass  size={70} />
             <p>UPLOAD FILES </p>

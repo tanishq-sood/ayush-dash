@@ -12,14 +12,14 @@ import Contact from '@/components/Contact/Contacts'
 import Footer from '@/components/Footer/Footer'
 import Videoplayer from '@/components/Videoplayer/Videoplayer'
 
-export default async function Home() {
+export default function Home() {
 
   const [playState, setPlayState] = useState(false);
   return (
     <div>
       <Navbar />
       <Hero />
-      <div className='pl-[5%] pr-[5%]'>
+      <div>
 
 
         <About setPlayState={setPlayState} />

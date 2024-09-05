@@ -31,11 +31,11 @@ const FAQ = () => {
             <div className='slider'>
                 <ul ref={slider}>
                     <li>
-                        <div className='slide'>
+                        <div className='slide min-h-[220px]'>
                             {/* <div className='userinfo'>
                                 <img src={faq1} alt="FAQ 1" />
                             </div> */}
-                            <h3>QUESTION1: What documents are required for registering an AYUSH startup in India?</h3>
+                            <h3>What documents are required for registering an AYUSH startup in India?</h3>
                             <span>Delhi, INDIA</span>
                             <div className='text'>
                                 <p>Typically, you need proof of identity, address proof, business plan, and relevant licenses or certifications related to AYUSH practices.</p>
@@ -43,11 +43,11 @@ const FAQ = () => {
                         </div>
                     </li>
                     <li>
-                        <div className='slide'>
+                        <div className='slide min-h-[220px]'>
                             {/* <div className='userinfo'>
                                 <img src={faq2} alt="FAQ 2" />
                             </div> */}
-                            <h3>QUESTION:How do I fill out the application form for AYUSH startup registration?
+                            <h3>How do I fill out the application form for AYUSH startup registration?
                             </h3>
                             <span>Delhi, INDIA</span>
                             <div className='text'>
@@ -56,11 +56,11 @@ const FAQ = () => {
                         </div>
                     </li>
                     <li>
-                        <div className='slide'>
+                        <div className='slide min-h-[220px]'>
                             {/* <div className='userinfo'>
                                 <img src={faq3} alt="FAQ 3" />
                             </div> */}
-                            <h3>QUESTION:What is the process for obtaining AYUSH licenses and certifications?</h3>
+                            <h3>What is the process for obtaining AYUSH licenses and certifications?</h3>
                             <span>Delhi, INDIA</span>
                             <div className='text'>
                                 <p>You need to apply through the respective regulatory body, providing all necessary documentation and compliance details. This process is typically part of the startup registration.</p>
@@ -68,11 +68,11 @@ const FAQ = () => {
                         </div>
                     </li>
                     <li>
-                        <div className='slide'>
+                        <div className='slide min-h-[220px]'>
                             {/* <div className='userinfo'>
                                 <img src={faq4} alt="FAQ 4" />
                             </div> */}
-                            <h3>QUESTION:What fees are involved in registering an AYUSH startup?</h3>
+                            <h3>What fees are involved in registering an AYUSH startup?</h3>
                             <span>Delhi, INDIA</span>
                             <div className='text'>
                                 <p>Registration fees vary depending on the type of business and the specific AYUSH domain. There may also be additional costs for licenses and certifications.</p>
@@ -80,11 +80,11 @@ const FAQ = () => {
                         </div>
                     </li>
                     <li>
-                        <div className='slide'>
+                        <div className='slide min-h-[220px]'>
                             {/* <div className='userinfo'>
                                 <img src={faq5} alt="FAQ 4" />
                             </div> */}
-                            <h3>QUESTION:What are the common mistakes to avoid when filling out the registration form?</h3>
+                            <h3>What are the common mistakes to avoid when filling out the registration form?</h3>
                             <span>Delhi, INDIA</span>
                             <div className='text'>
                                 <p>Ensure that all details are accurate, all required documents are attached, and the business objectives are clearly defined to avoid delays in the registration process.</p>
@@ -92,11 +92,11 @@ const FAQ = () => {
                         </div>
                     </li>
                     <li>
-                        <div className='slide'>
+                        <div className='slide min-h-[220px]'>
                             {/* <div className='userinfo'>
                                 <img src={faq6} alt="FAQ 4" />
                             </div> */}
-                            <h3>QUESTION:What is the role of digital signatures in the registration process?
+                            <h3>What is the role of digital signatures in the registration process?
                             </h3>
                             <span>Delhi, INDIA</span>
                             <div className='text'>

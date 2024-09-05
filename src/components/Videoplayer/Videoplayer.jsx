@@ -30,7 +30,7 @@ const Videoplayer = ({ playState, setPlayState }) => {
         width: '560',
         videoId: 'HClFyYiVK-8', // Replace with your YouTube video ID
         playerVars: {
-          'autoplay': 1,
+          // 'autoplay': 1,
           'controls': 1,
         },
       });

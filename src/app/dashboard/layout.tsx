@@ -32,34 +32,34 @@ export default function RootLayout({
             <aside className='w-[250px] bg-[#8ba889] p-[15px] text-white min-h-full flex flex-col justify-between'>
               <ul>
                 <Link href={'/dashboard'}>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer'>Home</li>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'>Home</li>
                 </Link>
                 <Link href={'/dashboard/registration'}>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer'>Registration Form</li>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'>Registration Form</li>
                 </Link>
                 <Link href={'/dashboard/reciept'}>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer'>E-Receipt Download</li>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'>E-Receipt Download</li>
                 </Link>
                 <Link href={'/dashboard/tracking'}>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer'>Track your application</li>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'>Track your application</li>
                 </Link>
                 <Link href={'/stories'}>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer'>Success Stories</li>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'>Success Stories</li>
                 </Link>
                 <Link href={'/incubator'}>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer'> Locate your incubator   PARAMBH</li>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'> Locate your incubator   PARAMBH</li>
                 </Link>
               </ul>
 
               <ul className="">
                 <Link href='/dashboard/profile'>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer'>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'>
                     Profile
                   </li>
                 </Link>
                 <li
                   onClick={() => (document.getElementById('my_modal_2') as HTMLDialogElement)?.showModal()}
-                  className='p-[10px] hover:bg-[#49654e] cursor-pointer'
+                  className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'
                 >
                   <a>Sign Out</a>
                 </li>

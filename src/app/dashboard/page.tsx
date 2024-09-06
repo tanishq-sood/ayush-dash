@@ -1,4 +1,6 @@
 "use client";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -36,7 +38,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className={styles.container}>
-        <h1 className=''>Welcome To Dashboard </h1>
+        
         {/* Profile Section */}
         <div className={styles.profileSection}>
           {/* User Photo */}
@@ -60,17 +62,17 @@ const Dashboard = () => {
         {/* Boxes with Text and Images */}
         <div className={styles.boxes}>
           <div className={styles.box}>
-            <Image src={section} alt="Icon 1" width={50} height={50} className={styles.boxImage} />
-            <p>Lorem ipsum dolor sit.</p>
+            <FaCalendarAlt size={35} className="mb-5 "/>
+            <p>My Venture</p>
           </div>
           <div className={styles.box}>
-            <Image src={section} alt="Icon 2" width={50} height={50} className={styles.boxImage} />
-            <p>Lorem ipsum dolor sit.</p>
+          <FaCheckCircle size={35}  className="mb-5 "  />
+            <p>Verification Status</p>
           </div>
-          <div className={styles.box}>
+          {/* <div className={styles.box}>
             <Image src={section} alt="Icon 3" width={50} height={50} className={styles.boxImage} />
-            <p>Lorem ipsum dolor sit.</p>
-          </div>
+            <p></p>
+          </div> */}
         </div>
       </div>
       <Toaster />

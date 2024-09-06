@@ -4,7 +4,23 @@ import "./StartupRegistrationForm.css";
 function StartupRegistrationForm3({ formData, handleChange }: { handleChange: any, formData: any }) {
 
   return (
+    
     <div className="form-container">
+      
+      <label className="form-group form-control w-full">
+        <div className="label">
+          <span className="label-text text-black text-xl">GSTIN.</span>
+        </div>
+        <input
+          type="text"
+          id="gst"
+          name="gst"
+          value={formData.numberOfFounders}
+          onChange={handleChange}
+          required
+          className="input input-bordered bg-white"
+        />
+      </label>
       <label className="form-control w-full">
         <div className="label">
           <span className="label-text text-black text-xl">Aaadhar Card</span>
@@ -37,7 +53,7 @@ function StartupRegistrationForm3({ formData, handleChange }: { handleChange: an
           <span className="label-text-alt text-black">Supported Files: PDF / Images</span>
         </div>
       </label>
-    </div>
+    </div >
   );
 }
 

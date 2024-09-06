@@ -5,14 +5,27 @@ import React, { useState } from 'react';
 const OrderTracking: React.FC = () => {
 
   const [step, setStep] = useState(1)
+  const [error, setError] = useState(false)
 
   const addStep = () => setStep(step + 1)
+
+  const handleOnSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const input = (e.target as HTMLFormElement)
+    const trackingNumber = input.trackingNumber.value
+  
+    if (trackingNumber === '12345678') {
+      setError(true)
+    } else {
+      addStep()
+    }
+  }
 
   return (
     <div>
       {step === 1 && (
         <div className="container mx-auto mt-10 p-5 bg-gray-100 rounded-lg shadow-md">
-          <form>
+          <form onSubmit={handleOnSubmit}>
             <h2 className="text-2xl font-bold">TRACK YOUR ORDER</h2>
             <div className="mt-6">
               <div className="flex items-center justify-between">
@@ -24,8 +37,9 @@ const OrderTracking: React.FC = () => {
                   className="border border-black px-4 py-2 rounded-lg w-1/2 bg-transparent text-black"
                 />
               </div>
+              {error && <p className="text-red-500 mt-2">Invalid tracking ID.</p>}
               <div className="mt-6">
-                <button onClick={addStep} className="btn bg-primary text-white px-6 py-2 rounded-lg">
+                <button type='submit' className="btn bg-primary text-white px-6 py-2 rounded-lg">
                   Track Order
                 </button>
               </div>

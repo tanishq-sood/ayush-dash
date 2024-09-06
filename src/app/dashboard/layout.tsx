@@ -5,6 +5,7 @@ import { signOut } from '@/lib/LoginHelper';
 import NotificationBell from "@/components/NotificationBellIcon/NotificationBell"
 import "../globals.css";
 import Link from "next/link"
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useEffect(() => {
+    // Dynamically load the Voiceflow chat widget
+    const script = document.createElement('script');
+    script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    script.type = "text/javascript";
+    script.onload = function () {
+      if (window.voiceflow && window.voiceflow.chat) {
+        window.voiceflow.chat.load({
+          verify: { projectID: '66d2013071827d420132bce3' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+    };
+    document.body.appendChild(script);
+
+    // Cleanup: remove the script when component unmounts
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <html lang="en">
       <body className={inter.className}>

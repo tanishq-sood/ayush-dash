@@ -3,7 +3,6 @@ import { FaCalendarAlt, FaCheckCircle } from "react-icons/fa";
 import React from 'react';
 import Image from 'next/image';
 import userp from '@/app/dashboard/imagess/profile1.jpg';
-import { Toaster } from 'react-hot-toast';
 
 const Dashboard = () => {
   return (
@@ -36,12 +35,10 @@ const Dashboard = () => {
           <p>My Venture</p>
         </div>
         <div className="flex-1 p-5 bg-gray-100 text-center rounded-lg">
-          <FaCheckCircle size={35} className="mb-2 mx-auto" />
+          <FaCheckCircle size={35} className="mb-2 mx-auto" color="green" />
           <p>Verification Status</p>
         </div>
       </div>
-
-      <Toaster />
     </div>
   );
 }

@@ -2,39 +2,15 @@
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from './Dashboard.module.css';
 import userp from '@/app/dashboard/imagess/profile1.jpg';
-import section from '@/app/dashboard/imagess/square.jpg';
 
-import { useSearchParams } from 'next/navigation'
 import { Toaster, toast as t } from 'react-hot-toast';
 
 const Dashboard = () => {
-
-  const search = useSearchParams()
-  const success = search.get("success")
   
-  const [isToastShown, setIsToastShown] = useState(false)
-  
-  useEffect(() => {
-    if (!isToastShown && success) {
-      if (success === '1') {
-        t.success('PAYMENT SUCCESSFUL.', {
-          position: "bottom-right"
-        })
-      } else if (success === '0') {
-        t.error("PAYMENT FAILURE", {
-          position: "bottom-right"
-        })
-      }
-      setIsToastShown(true) // Prevent future toasts
-    }
-  }, [success, isToastShown])
-  
-
-
   return (
     <div>
       <div className={styles.container}>

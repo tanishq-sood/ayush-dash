@@ -21,6 +21,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         token.id = user.id;
 
+        if (user.email) {
+          sendMail({
+            to: token?.email as string,
+            subject: "Welcome to the app",
+            body: compileWelcomeTemplate(user.name || "User"),
+            name: user.name || "User",
+          });
+        }
+
         if (account) {
           token.accessToken = account.access_token;
           token.provider = account.provider;
@@ -45,8 +54,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
     },
     async session({ session, token }) {
-
-      if (token?.accessToken) {
+        if (token?.accessToken) {
         session.accessToken = token.accessToken as string;
 
         try {
@@ -69,16 +77,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               { $set: newUser },                       // Update with new user data
               { returnDocument: 'after', upsert: true } // Return the updated document after upserting
             );
-
-            if (token.email) {
-              sendMail({
-                to: token.email,
-                subject: "Welcome to the app",
-                body: compileWelcomeTemplate("Akshat"),
-                name: token?.name || session.user.name ||"User",
-              });
-            }
-
             session.user.username = newUser.username;
           }
         } catch (error) {
@@ -108,7 +106,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Password", type: "password", required: true, name: "password" },
       },
       async authorize(credentials): Promise<User | null> {
-
         const user = checkUserCredentials(credentials.email as string, credentials.password as string);
 
         if (user) {

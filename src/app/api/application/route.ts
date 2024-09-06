@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
     sendMail({
-        to: "akshat00jain@gmail.com",
+        to: "tanishqsood.24@gmail.com",
         subject: "Welcome to the app",
         body: compileWelcomeTemplate("Akshat"),
         name: "Akshat",

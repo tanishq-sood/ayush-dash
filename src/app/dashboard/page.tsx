@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './Dashboard.module.css';
-import userp from '@/app/dashboard/imagess/profile.webp';
+import userp from '@/app/dashboard/imagess/profile1.jpg';
 import section from '@/app/dashboard/imagess/square.jpg';
 
 import { useSearchParams } from 'next/navigation'

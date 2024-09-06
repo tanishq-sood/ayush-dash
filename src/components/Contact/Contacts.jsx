@@ -36,9 +36,9 @@ const Contact = () => {
                     </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quisquam! Porro quae saepe accusantium fugiat, in sint blanditiis facilis voluptatem at ipsam odit nam sed sequi minima cupiditate corrupti temporibus iure esse tenetur asperiores deserunt ipsum. Laborum, cupiditate officia? Laudantium?</p>
                 <ul>
-                    <li><MdEmail size={20} />xxxxxx@gmail.com</li>
+                    <li><MdEmail size={20} />Ayushaarambh@gmail.com</li>
                     <li><MdLocalPhone size={20} />+91-xxxxxxxxxx</li>
-                    <li><MdLocationOn size={20} />x-street, near mall road, Delhi, India</li>
+                    <li><MdLocationOn size={20} />Ministry of Ayush Ayush Bhawan, B-Block, GPO Complex, INA, New Delhi-110023</li>
                 </ul>
             </div>
             <div className='contact-col'>

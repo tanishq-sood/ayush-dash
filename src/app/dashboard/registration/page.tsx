@@ -53,7 +53,7 @@ const RegistrationForm = () => {
         name: "Ayush Aarambh",
         order_id: data.orderId,
         handler: function (response: any) {
-          router.push('/dashboard?payment=success');
+          router.push('/dashboard?success=1');
         },
       };
 

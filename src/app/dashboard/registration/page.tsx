@@ -40,31 +40,46 @@ const RegistrationForm = () => {
   };
 
   const handlePayment = async () => {
-    setProcessing(true);
 
     try {
-      const res = await fetch('/api/order', { method: 'POST' });
-      const data = await res.json();
-
-      const options = {
-        key: process.env.NEXT_PUBLIC_RP_ID,
-        amount: 10 * 100,
-        currency: 'INR',
-        name: "Ayush Aarambh",
-        order_id: data.orderId,
-        handler: function (response: any) {
-          router.push('/dashboard?success=1');
+      setProcessing(true);
+      const response = await fetch('/api/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-      };
+      });
 
-      const rzp = new window.Razorpay(options);
-      rzp.open();
-    } catch (error) {
-      console.log(error);
-    } finally {
+      const data = await response.json();
+      if (data.orderId) {
+        const options = {
+          key: process.env.NEXT_PUBLIC_RP_ID,
+          amount: 10 * 100,
+          currency: 'INR',
+          name: 'Ayush Aarambh',
+          description: 'Payment on startup registration portal (Ayush Aarambh)',
+          order_id: data.orderId,
+          handler: function (response: any) {
+            router.push(`/payment-success?paymentId=${response.razorpay_payment_id}&orderId=${response.razorpay_order_id}`);
+          },
+          theme: {
+            color: '#3399cc',
+          },
+          modal: {
+            ondismiss: function () {
+              router.push('/payment-failure');
+            },
+          },
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+      }
+    } catch (error) { }
+    finally {
       setProcessing(false);
     }
-  }
+  };
 
 
   return (

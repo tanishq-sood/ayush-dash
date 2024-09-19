@@ -83,29 +83,62 @@ const RegistrationForm = () => {
 
 
   return (
-    <div>
-      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
-      <form>
-        {step === 1 && (
-          <Step1 formData={formData} handleChange={handleChange} />
-        )}
-        {step === 2 && (
-          <Step2 formData={formData} handleChange={handleChange} />
-        )}
-        {step === 3 && (
-          <Step3 formData={formData} handleChange={handleChange} />
-        )}
-        {step === 4 && (
-          <Step4 formData={formData} handleChange={handleChange} />
-        )}
+    <div className="relative flex items-center justify-center min-h-screen bg-gray-200">
+      {/* Colorful Spheres */}
+      <div className="absolute w-60 h-60 bg-blue-400 rounded-full top-10 left-10 opacity-70 blur-3xl animate-pulse"></div>
+      <div className="absolute w-40 h-40 bg-pink-400 rounded-full top-40 left-40 opacity-70 blur-3xl animate-pulse"></div>
+      <div className="absolute w-56 h-56 bg-yellow-400 rounded-full bottom-20 right-20 opacity-70 blur-3xl animate-pulse"></div>
 
-        {/* Step Navigation */}
-        <div className='items-center justify-center flex'>
-          {step > 1 && <button className='bg-[#4CAF50] hover:bg-[#3a9b43] w-1/2 text-white mr-5 rounded h-10' type="button" onClick={prevStep}>Back</button>}
-          {step < 4 && <button className='bg-[#4CAF50] hover:bg-[#3a9b43] w-1/2 text-white ml-5 rounded h-10' type="button" onClick={nextStep}>Next</button>}
-          {step === 4 && <button disabled={processing} onClick={handlePayment} className='bg-[#4CAF50] hover:bg-[#3a9b43] w-1/2 text-white ml-5 rounded h-10' type="submit">Pay</button>}
-        </div>
-      </form>
+      {/* Glass Effect Container */}
+      <div className="w-full z-50">
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" />
+        <form>
+          {step === 1 && (
+            <Step1 formData={formData} handleChange={handleChange} />
+          )}
+          {step === 2 && (
+            <Step2 formData={formData} handleChange={handleChange} />
+          )}
+          {step === 3 && (
+            <Step3 formData={formData} handleChange={handleChange} />
+          )}
+          {step === 4 && (
+            <Step4 formData={formData} handleChange={handleChange} />
+          )}
+
+          {/* Step Navigation */}
+          <div className="flex items-center justify-center">
+            {step > 1 && (
+              <button
+                className="bg-[#4CAF50] hover:bg-[#3a9b43] w-1/2 text-white mr-5 rounded h-10"
+                type="button"
+                onClick={prevStep}
+              >
+                Back
+              </button>
+            )}
+            {step < 4 && (
+              <button
+                className="bg-[#4CAF50] hover:bg-[#3a9b43] w-1/2 text-white ml-5 rounded h-10"
+                type="button"
+                onClick={nextStep}
+              >
+                Next
+              </button>
+            )}
+            {/* {step === 4 && (
+              <button
+                disabled={processing}
+                onClick={handlePayment}
+                className="bg-[#4CAF50] hover:bg-[#3a9b43] w-1/2 text-white ml-5 rounded h-10"
+                type="submit"
+              >
+                Pay
+              </button>
+            )} */}
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

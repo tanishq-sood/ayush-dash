@@ -69,7 +69,7 @@ export default function RootLayout({
                   <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'>Success Stories</li>
                 </Link>
                 <Link href={'/incubator'}>
-                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'> Locate your incubator   PARAMBH</li>
+                  <li className='p-[10px] hover:bg-[#49654e] cursor-pointer rounded-md mt-3'> Locate your incubator   PRARAMBH</li>
                 </Link>
               </ul>
 

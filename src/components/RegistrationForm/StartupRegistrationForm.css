@@ -1,10 +1,8 @@
 .form-container {
-  background-color: #e7f6d5;
+  background-color: transparent;
   padding: 30px;
-  border-radius: 10px;
   width: 70%;
   margin: 50px auto;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-container h2 {
@@ -41,6 +39,7 @@
   width: 100%;
   font-size: 16px;
   transition: background-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 5rem;
 }
 
 .submit-btn:hover {

@@ -3,7 +3,7 @@ import React from "react";
 function StartupRegistrationForm1({ formData, handleChange }: { handleChange: any, formData: any }) {
 
   return (
-    <div className="form-container">
+    <div className="form-container bg-white">
       <h2 className="text-3xl">Startup Registration - Step 1</h2>
       <label className="form-group form-control w-full">
         <div className="label">

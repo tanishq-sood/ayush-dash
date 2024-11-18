@@ -21,6 +21,7 @@ export async function sendMail({
       pass: SMTP_PASSWORD,
     },
   });
+  
   try {
     const testResult = await transport.verify();
   } catch (error) {
